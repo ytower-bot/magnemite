@@ -1,0 +1,50 @@
+# .github/workflows/deploy.yml
+
+name: Publicar Blog no GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # Garante que a publicação roda sempre que você faz push no branch principal
+  workflow_dispatch: # Permite rodar a Ação manualmente no GitHub
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Código
+        uses: actions/checkout@v5 # v5 é mais recente que v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js (v22+)
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22 # Mantém o mínimo necessário para o Quartz
+
+      - name: Instalar Dependências
+        run: npm ci # Usa 'npm ci' para builds de CI/CD (mais limpo que 'npm install')
+
+      - name: Build do Quartz
+        # Rodar o build padrão que gera o site na pasta 'public/'
+        run: npx quartz build
+
+      - name: Upload Artifact para Deploy
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public # A pasta que o Quartz gera
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build # Garante que só publica se o build der certo
+    permissions:
+      pages: write # Permissão CRUCIAL para publicar no Pages
+      id-token: write # Permissão CRUCIAL para autenticação
+      contents: read
+    steps:
+      - name: Deploy para GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
