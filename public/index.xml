@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+      <title>Quartz 4</title>
+      <link>https://quartz.jzhao.xyz</link>
+      <description>Last 10 notes on Quartz 4</description>
+      <generator>Quartz -- quartz.jzhao.xyz</generator>
+      <item>
+    <title>Hello</title>
+    <link>https://quartz.jzhao.xyz/Estudos/Hello</link>
+    <guid>https://quartz.jzhao.xyz/Estudos/Hello</guid>
+    <description><![CDATA[ 2025-11-05 20:59 Tags: Status: Testando… References. ]]></description>
+    <pubDate>Thu, 06 Nov 2025 03:01:57 GMT</pubDate>
+  </item><item>
+    <title>this is mind to earth</title>
+    <link>https://quartz.jzhao.xyz/</link>
+    <guid>https://quartz.jzhao.xyz/</guid>
+    <description><![CDATA[ This is a blank Quartz installation. See the documentation for how to get started. ]]></description>
+    <pubDate>Thu, 06 Nov 2025 02:26:57 GMT</pubDate>
+  </item>
+    </channel>
+  </rss>
