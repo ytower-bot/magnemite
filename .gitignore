@@ -10,7 +10,7 @@ dist/
 
 # 3. OBSIDIAN / TEMPORÁRIOS
 
-.obsidian/
+content/.obsidian/
 **/*.bak
 npm-debug.log
 .DS_Store
