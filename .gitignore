@@ -1,23 +1,22 @@
-# ------------------------------------
 # 1. ARQUIVOS GERADOS / DE SAÍDA (Obrigatório)
-# ------------------------------------
 public/
 node_modules/
 
 
-# ------------------------------------
 # 2. ARQUIVOS DE BUILD/CACHE (Obrigatório)
-# ------------------------------------
 .quartz-cache/
 dist/
 
 
-# ------------------------------------
 # 3. OBSIDIAN / TEMPORÁRIOS
-# ------------------------------------
 
 .obsidian/
 **/*.bak
 npm-debug.log
 .DS_Store
 .env
+
+
+# 4. QUARTZ
+
+quartz/
